@@ -1,0 +1,88 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1gt92wf,Do you ingest to S3 or straight to snowflake?,"So my current thought is do a bit of both. If something has a fivetran connector, load it straight into Snowflake, but if doesn’t, load it to S3 then snow pipe it into snowflake.
+
+Any thoughts on this? Has anyone found loading straight into snowflake something they regret doing with an ingestion tool like fivetran? I’m thinking if you need to re-ingest data, or whatever else?
+
+When I’ve worked with warehouses like Redshift, I’ve ALWAYS loaded to S3 first, but it seems like loading straight into snowflake is the way a lot of people go.",45,38,General-Parsnip3138,2024-11-17 08:20:39,https://www.reddit.com/r/dataengineering/comments/1gt92wf/do_you_ingest_to_s3_or_straight_to_snowflake/,0.92,False,False,False,False
+1gtuyda,How common is shitty data? ,"Context : I've joined service based company as data engineer. This company, basically does ROI ( some business process) for other company. It collected all the data about performance. And my team is supposed to make dashboards and fill missing values in columns. 
+
+* Data is couple of excel files
+* No mention of ER Or Dimensional modeling
+* Manager already made dashboard, he's asking us to update it. 
+* He doesn't know everything about the data. He's also learning about excel files and everything. 
+* I am sitting with people who do the process and try to relate it with excel files. 
+* It's extremely  hard to understand. Effecting my motivation to work. 
+
+My assumptions are : 
+1) process is complex. Only people involved should make the data ? 
+
+2) Data should be in dimensional model ? 
+
+3) Data should be either relational databases or snowflake, not excel files ? 
+
+4) If you didn't had proper model. Atleast document the meaning of each file, sheet, table, column and value ? 
+
+Is this normal ? 
+Isn't data modeling extremely important for long term benefits ? 
+
+I was a student 3 months ago, all my assumptions are from textbook. 
+",49,47,TuneArchitect,2024-11-18 02:54:59,https://www.reddit.com/r/dataengineering/comments/1gtuyda/how_common_is_shitty_data/,0.93,False,False,False,False
+1gta7ei,I thought SCD 2 modeling store all history versions and SCD 3 store only current and previous history?,"I am currently learning and going through all the concepts.  So currently Is that my data model understanding incorrect? 
+
+Suppose if record is changed 3 times,   SCD 2 store all 3 and SCD 3 will store  current and last change",17,16,Dead-Shot1,2024-11-17 09:46:27,https://www.reddit.com/r/dataengineering/comments/1gta7ei/i_thought_scd_2_modeling_store_all_history/,0.96,False,False,False,False
+1gtkbsv,Data engineering vs Platform engineering ,"Hi friends! I’ve been a data engineer for around 4-5 years now and recently started a new position. The title is also DE, but I’m realizing I might be dabbling in the platform engineering world (esp given we were formed from the Platform team).
+
+For example, I’m not only building pipelines and managing our Snowflake instance, but also doing lots of terraform via RBAC, managing apps via ArgoCD, and doing package version updates on our repo.
+
+Would anybody be able to help me better understand how a DE might differentiate from a Platform engineer vs a devops engineer? And would those future paths might look like? It feels like platform engineering might open me up to more opportunities, but I’m not exactly sure how the work differs. For context, I came up from being a DA -> DE.",15,2,cuhristophet,2024-11-17 18:39:09,https://www.reddit.com/r/dataengineering/comments/1gtkbsv/data_engineering_vs_platform_engineering/,0.9,False,False,False,False
+1gtp9qn,How accurate are these layer definitions from Hamilton? ,"Saw this chart in Hamilton documentation and wondered if this is common terminology for the layers of data stack, more specifically: 
+
+1. Is there really ""asset level""? Is dbt ""asset level""? 
+2. What is good source to read about these layers? 
+3. Why postgres is data and DuckDB is execution? Ok to have Snofkake on two levels? Is lang chain same level as pandas? ",12,8,iamevpo,2024-11-17 22:16:20,https://i.redd.it/4pwmfckpdj1e1.png,0.89,False,False,False,False
+1gtvrtn,What are some viable platforms for smaller DE teams?,"and when I'm talking small I mean pretty much startup sized. Like 1 DE, 1 Analyst and a handful of DE contractors handling small scale data (< 5 TB total in data warehouse, < 500k rows refreshing/inserting daily). Our main deliverable is a set of about two dozen operational dashboards that need to be refreshed daily in the early morning - no ML, IoT stuff or other data products.
+
+A little background - I inherited some tech debt (no documentation, no peers) coming into my role as a data engineer in a manufacturing company \~2.5 years ago. It's taken me about that long to understand how messy everything truly is, and that we need to migrate or get stuck here for the foreseeable future. 
+
+Our analytics platform is a garbled mess of on-prem SSIS and Azure Data Factory pipelines that kick off Databricks notebooks (medallion). From there, we ultimately write to a Synapse Dedicated SQL Pool where finally all the business logic is baked into sql views (sometimes nested). I'm skipping a bunch of steps but the databricks component is essentially useless and the SSIS jobs are overly complex, so we're looking to start over from scratch and minimize or at least optimize costs. If you're asking how we got here I'm not sure either. Probably a mix of mismanagement and contractor turnover.  
+
+
+What solutions have worked for your smaller sized teams? My manager is leaning towards Fivetran + Fabric which I am surprisingly not super against given how out of the box things look in there. Fivetran would handle the CDC from our ERP to Azure Data Lake and Fabric would pick up from there. I realize the inherent risk with how new Fabric is, but it kind of sounds up our alley. I have a ton of users in Power BI looking to upload their own spreadsheets to existing reports, and Fabric seems to make managing that easy.
+
+Our most complicated data sources are a few third-party REST APIs, so if I could slim our pipelines down to just Fabric pipelines + a few Spark jobs and migrate the Synapse view logic over to the Fabric Lakehouses I think we would be set. Curious to hear what other smaller teams are using.",11,2,epichicken,2024-11-18 03:39:25,https://www.reddit.com/r/dataengineering/comments/1gtvrtn/what_are_some_viable_platforms_for_smaller_de/,1.0,False,False,False,False
+1gtjvxr,"[DW/Star] Locating ""Current"" Calculated Facts in the Model","Given the assumption of a logical (not necessarily physical) star schema, what's your go to approach for modeling ""current"" Calculated Facts about a domain entity (dimension)?
+
+Use Case: a rating about a persistent entity (e.g., customer, HR, supplier) that is based on a calculation of events (facts), but you want to be able to use/compare.
+
+Example: customer value is based on total spend / total purchases. You can just leave the elements of the fact table and in some layer (a view, semantic layer, etc.), but this value is more of a property of the dimension (the customer's value) - it doesn't really map to the other facts at the grain, because another fact at the grain is about that event.",10,2,PencilBoy99,2024-11-17 18:19:49,https://www.reddit.com/r/dataengineering/comments/1gtjvxr/dwstar_locating_current_calculated_facts_in_the/,1.0,False,False,False,False
+1gtauzp,Can backfill be accomplished by simply dragging and dropping some files or does it need to follow the same pipeline of streaming real time data,I am in the process of creating a data lake for my Apple Health data. In my case I believe the API data available extends to the very first observation records. The data lake is a necessity because the alternative is requesting the XML file from apple each time you want to see updates. However as a theoretical matter I was wondering if something like GDPR had an impact on what was available and there was a mix of data stored in an existing database containing the oldest historical records and the API for which streaming data  was ingested but which did not have the oldest records. Most dags I see involve partitioning by date and storage as parquet. This is all automated. Can you drag and drop into these folders? Should you instead create a new pipeline and scripts for one time ingestion of historical records? It seems there are not clear answers to questions like this. Everything seems so tailored to the exact specification of the example that I can't find general answers,5,3,sumant28,2024-11-17 10:34:21,https://www.reddit.com/r/dataengineering/comments/1gtauzp/can_backfill_be_accomplished_by_simply_dragging/,0.86,False,False,False,False
+1gty17o,Help with Data Migration Strategy for Core Banking Systems,"We’re planning a data migration for our core banking system, but I want to ensure the strategy is rock-solid. Does anyone have experience with data migration in banking, especially with core banking systems in New Zealand? Any tips or best practices?",5,1,strict_princess08,2024-11-18 05:52:16,https://www.reddit.com/r/dataengineering/comments/1gty17o/help_with_data_migration_strategy_for_core/,0.86,False,False,False,False
+1gtkvzb,Dependency mapping for tables ?,"Hi all,
+
+I am reaching out to ask if there are any services or solutions recommended for dependency mapping for tables. At my current company we have a very disorganised data warehouse where scheduled queries are being used alongside airflow to schedule queries and we're running into issues where table\_a is being affected by table\_z but there is about 20 tables in between those two, there isn't any documentation for this due to hasty growth and development and between repetitive code and accidental knock on effects we are becoming increasingly inefficient and error prone.  I am reaching out to ask if there is any software that anyone has used before to remediate this and essentially provide mapping for tables to help us reduce repetition and understand the data flow more?
+
+  
+Thanks",2,6,UnlovedMisfit,2024-11-17 19:03:42,https://www.reddit.com/r/dataengineering/comments/1gtkvzb/dependency_mapping_for_tables/,1.0,False,False,False,False
+1gtuvla,Rhapsody | mTLS,"Hey guys I’m dealing with rhapsody integration from one hospital to another and we want to enable mTLS 
+
+Long shot but has anyone done this? ",1,0,4EVR20,2024-11-18 02:50:45,https://www.reddit.com/r/dataengineering/comments/1gtuvla/rhapsody_mtls/,0.67,False,False,False,False
+1gtrgqg,How do your data projects get planned?,"Hi people,
+
+I am a data engineer working in a small team with 2 other engineers and a manager who is also the project manager. My questions are:
+
+How are your data projects planned? Who planned the work items (is it the responsibility of the engineer)? How detailed the work items and time estimation should be before you can start the projects? How long does it take from drafting the planning to starting the coding?
+
+I am curious because I have recently started working on project planning and technical design of a new project. My manager is not satisfied with my planning and estimation on the level of ""build a manual input table of xxx data"" and they wants me to specify all the details such as the columns I need to build for this manual input table. My gut told me it's not agile but I've never worked with a well-structured project team and I wonder what's the industry standard for a project to start.
+
+I did a big project this year when my manager was not involved so there was not this ""specifying on columns"" requirement at that time. I personally am more comfortable with the method of having a high-level design and then just starting to code, then figuring out what are the specific requirements along the way but I am open to different opinions!",1,3,Formal-Big-6794,2024-11-17 23:59:12,https://www.reddit.com/r/dataengineering/comments/1gtrgqg/how_do_your_data_projects_get_planned/,0.67,False,False,False,False
+1gtq2nm,Live DQ test on Databricks,"How do you guys do live data quality test on Databricks pipeline while running the pipeline?
+I’d like to check if the fields of incoming data source/files haven’t changed and the count of the records is not abnormally high or low",1,1,CuriousSwitch7268,2024-11-17 22:53:26,https://www.reddit.com/r/dataengineering/comments/1gtq2nm/live_dq_test_on_databricks/,0.67,False,False,False,False
+1gtmwnj,Making schedules with my wife… should I blend my professional development time with my work from home time?,"I’m building a schedule with my wife. We need one because we both have careers and young kids, so time escapes us rather easily. It’s often enough that we try to squeeze in a little time for ourselves to watch TV throughout the week, and end the week feeling like nothing has been accomplished professionally. So a schedule will be introduced, to hopefully help give us some balance.
+
+The thing is, sometimes I work from home after hours because some things need to get done. I’m a new employee where I work also, so I don’t want to be applying time constraint pushbacks too much. The thing is, our schedule currently calls this time my “work time.”
+
+I asked, well, what about professional development time? Time to focus on things I want, like open source software that I want to develop? Or a homelab? Or a personal knowledge base? Anything that I want to develop for my own personal interests… what of my own personal hobby coding and professional development?
+
+These times are blended in the schedule. My wife says they’re the same thing and don’t need to be differentiated. Personally though, I believe they’re very different. One’s relaxing, and one can be quite stressful. One is for pay, and the other has no tangible immediate return. One is for my boss, the other is for me. Evidence of one disappears after I lose my job, but the other stays with me forever. Surely these aren’t the “same thing,” right?
+
+Am I wrong here?",0,14,DuckDatum,2024-11-17 20:32:31,https://www.reddit.com/r/dataengineering/comments/1gtmwnj/making_schedules_with_my_wife_should_i_blend_my/,0.31,False,False,False,False

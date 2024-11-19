@@ -1,0 +1,80 @@
+[2024-11-18T06:47:56.638+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T06:47:56.648+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T06:47:56.648+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-11-18T06:47:56.661+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-11-17 00:00:00+00:00
+[2024-11-18T06:47:56.665+0000] {standard_task_runner.py:57} INFO - Started process 59 to run task
+[2024-11-18T06:47:56.671+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'scheduled__2024-11-17T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmp5k5qam_6']
+[2024-11-18T06:47:56.672+0000] {standard_task_runner.py:85} INFO - Job 2: Subtask reddit_extraction
+[2024-11-18T06:47:56.801+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [running]> on host 9f42dd3b4e06
+[2024-11-18T06:47:56.896+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bao Nguyen' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-11-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-17T00:00:00+00:00'
+[2024-11-18T06:47:56.898+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: reddit_pipeline() missing 1 required positional argument: 'sil_name'
+[2024-11-18T06:47:56.910+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20241117T000000, start_date=20241118T064756, end_date=20241118T064756
+[2024-11-18T06:47:56.923+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 2 for task reddit_extraction (reddit_pipeline() missing 1 required positional argument: 'sil_name'; 59)
+[2024-11-18T06:47:56.931+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-11-18T06:47:56.951+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-18T06:49:29.205+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T06:49:29.218+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T06:49:29.218+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-11-18T06:49:29.233+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-11-17 00:00:00+00:00
+[2024-11-18T06:49:29.238+0000] {standard_task_runner.py:57} INFO - Started process 66 to run task
+[2024-11-18T06:49:29.242+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'scheduled__2024-11-17T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmpfez93exb']
+[2024-11-18T06:49:29.243+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask reddit_extraction
+[2024-11-18T06:49:29.303+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [running]> on host 9f42dd3b4e06
+[2024-11-18T06:49:29.389+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bao Nguyen' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-11-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-17T00:00:00+00:00'
+[2024-11-18T06:49:29.391+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: reddit_pipeline() missing 1 required positional argument: 'sil_name'
+[2024-11-18T06:49:29.400+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20241117T000000, start_date=20241118T064929, end_date=20241118T064929
+[2024-11-18T06:49:29.411+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 6 for task reddit_extraction (reddit_pipeline() missing 1 required positional argument: 'sil_name'; 66)
+[2024-11-18T06:49:29.423+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-11-18T06:49:29.437+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-18T07:06:55.980+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T07:06:55.994+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T07:06:55.995+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-11-18T07:06:56.011+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-11-17 00:00:00+00:00
+[2024-11-18T07:06:56.016+0000] {standard_task_runner.py:57} INFO - Started process 72 to run task
+[2024-11-18T07:06:56.021+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'scheduled__2024-11-17T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmp7tm7lse5']
+[2024-11-18T07:06:56.022+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask reddit_extraction
+[2024-11-18T07:06:56.121+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [running]> on host 9f42dd3b4e06
+[2024-11-18T07:06:56.206+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bao Nguyen' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-11-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-17T00:00:00+00:00'
+[2024-11-18T07:06:56.208+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: reddit_pipeline() missing 1 required positional argument: 'sil_name'
+[2024-11-18T07:06:56.217+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20241117T000000, start_date=20241118T070655, end_date=20241118T070656
+[2024-11-18T07:06:56.230+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 9 for task reddit_extraction (reddit_pipeline() missing 1 required positional argument: 'sil_name'; 72)
+[2024-11-18T07:06:56.250+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-11-18T07:06:56.269+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-18T07:08:10.788+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T07:08:10.799+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [queued]>
+[2024-11-18T07:08:10.800+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-11-18T07:08:10.814+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-11-17 00:00:00+00:00
+[2024-11-18T07:08:10.819+0000] {standard_task_runner.py:57} INFO - Started process 76 to run task
+[2024-11-18T07:08:10.823+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'scheduled__2024-11-17T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmpn67xd3ue']
+[2024-11-18T07:08:10.824+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask reddit_extraction
+[2024-11-18T07:08:10.880+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-11-17T00:00:00+00:00 [running]> on host 9f42dd3b4e06
+[2024-11-18T07:08:10.963+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bao Nguyen' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-11-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-17T00:00:00+00:00'
+[2024-11-18T07:08:10.965+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: reddit_pipeline() missing 1 required positional argument: 'sil_name'
+[2024-11-18T07:08:10.973+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20241117T000000, start_date=20241118T070810, end_date=20241118T070810
+[2024-11-18T07:08:10.984+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 11 for task reddit_extraction (reddit_pipeline() missing 1 required positional argument: 'sil_name'; 76)
+[2024-11-18T07:08:11.003+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-11-18T07:08:11.021+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

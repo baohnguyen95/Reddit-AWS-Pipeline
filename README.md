@@ -9,3 +9,9 @@
 
 ## Architecture
 ![diagram](https://github.com/user-attachments/assets/8766ebc8-ea72-4bed-af12-6a6cdf572d28)
+
+## System setup
+1. AWS Account with appropriate permissions for S3, Glue, Athena, and Redshift.
+2. Reddit API credentials.
+3. Docker Installation
+4. Python 3.9 or higher
